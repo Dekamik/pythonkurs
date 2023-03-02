@@ -109,12 +109,12 @@ def read_json():
 
 if __name__ == "__main__":
     # print(os.listdir())
-    # read_old()
+    read_old()
     # read_new()
     # write_file()
     # read_csv()
     # read_csv_as_dict()
     # write_csv()
-    write_csv_from_dict()
+    # write_csv_from_dict()
     # write_json()
     # read_json()

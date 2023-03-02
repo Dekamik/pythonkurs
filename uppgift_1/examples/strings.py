@@ -48,7 +48,7 @@ def str_methods():
 
 
 if __name__ == "__main__":
-    # hello_world()
+    hello_world()
     # hello_world_single_quotes()
     # hello_input()
     # format_hello()

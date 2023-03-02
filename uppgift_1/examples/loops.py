@@ -27,9 +27,27 @@ def list_comprehension_2():
     print(new_list)
 
 
+def loop_continue():
+    list = ["Adam", "Bertil", "Albert", "Caesar", "David", "Erik", "Filip"]
+    for name in list:
+        if name == "Albert":
+            print("Du hör inte hemma här")
+            continue
+        print(name)
+
+
+def loop_break():
+    list = ["Adam", "Bertil", "Albert", "Caesar", "David", "Erik", "Filip"]
+    for name in list:
+        if name == "Albert":
+            break
+        print(name)
+
+
 if __name__ == "__main__":
-    # while_loop()
+    while_loop()
     # for_in_range()
     # for_in_list()
     # list_comprehension()
-    list_comprehension_2()
+    # list_comprehension_2()
+    # no_albert()

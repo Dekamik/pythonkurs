@@ -12,4 +12,13 @@ def tertiary():
 
 
 def match():
-    pass
+    command = "read"
+    match command:
+        case "read":
+            print("read selected")
+            
+        case "write":
+            print("write selected")
+
+        case _:
+            print("unknown commnad")

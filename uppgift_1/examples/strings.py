@@ -7,13 +7,13 @@ def hello_world_single_quotes():
 
 
 def hello_input():
-    subject = input()
-    print("Hello, " + subject)
+    name = input("Name: ")
+    print("Hello, " + name)
 
 
 def format_hello():
-    subject = input()
-    print(f"Hello, {subject}")
+    name = input("Name: ")
+    print(f"Hello, {name}")
 
 
 def substring():
@@ -30,5 +30,28 @@ def contains():
         print(f"It doesn't contain {substring} :(")
 
 
+def str_methods():
+    list = ["Adam", "Bertil", "Caesar", "David", "Erik", "Filip"]
+    print(list)
+
+    list_as_str = ", ".join(list)
+    print(list_as_str)
+
+    list_lower = [name.lower() for name in list]
+    print(list_lower)
+
+    list_upper = [name.upper() for name in list]
+    print(list_upper)
+
+    list_capitalized = [name.capitalize() for name in list_lower]
+    print(list_capitalized)
+
+
 if __name__ == "__main__":
-    contains()
+    # hello_world()
+    # hello_world_single_quotes()
+    # hello_input()
+    # format_hello()
+    # substring()
+    # contains()
+    # str_methods()

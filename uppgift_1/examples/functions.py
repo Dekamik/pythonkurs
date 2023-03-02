@@ -1,3 +1,6 @@
+import random
+
+
 def all_any():
     data = [
         [
@@ -35,5 +38,15 @@ def all_any():
             print("all: Contains no pupils")
 
 
+def min_max_sum():
+    numbers = [random.randint(0, 100) for _ in range(20)]
+    print(numbers)
+
+    print(f"Smallest number is {min(numbers)}")
+    print(f"Largest number is {max(numbers)}")
+    print(f"Sum of all numbers is {sum(numbers)}")
+
+
 if __name__ == "__main__":
     all_any()
+    # min_max_sum()

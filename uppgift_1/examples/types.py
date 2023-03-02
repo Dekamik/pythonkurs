@@ -61,10 +61,10 @@ def casting():
 
 
 if __name__ == "__main__":
-    # primitives()
+    primitives()
     # non_primitives()
     # implicit_conversion()
     # explicit_conversion()
-    casting()
+    # casting()
     # ret = type_hint(3)
     # print(type(ret))

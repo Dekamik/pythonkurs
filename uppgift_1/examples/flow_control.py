@@ -1,7 +1,7 @@
-def if_else_elif(condition):
-    if condition:
+def if_else_elif():
+    if True:
         return 1
-    elif not condition:
+    elif False:
         return -1
     else:
         return 0
@@ -9,6 +9,24 @@ def if_else_elif(condition):
 
 def tertiary():
     return 1 if True else -1 if False else 0
+
+
+def logical_operators():
+    print("--- or ---")
+    print(False or False)
+    print(True or False)
+    print(False or True)
+    print(True or True)
+
+    print("\n--- and ---")
+    print(False and False)
+    print(True and False)
+    print(False and True)
+    print(True and True)
+
+    print("\n--- not ---")
+    print(not True)
+    print(not False)
 
 
 def match(command):
@@ -33,4 +51,5 @@ def scope():
 
 
 if __name__ == "__main__":
-    scope()
+    logical_operators()
+    # scope()

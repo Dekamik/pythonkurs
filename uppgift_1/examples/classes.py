@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from datetime import date
+from datetime import date, datetime
 from enum import Enum
 
 
@@ -28,11 +28,14 @@ class Employee(Person):
         self.stamina += hours / 3.2
 
     def __str__(self) -> str:
-        return f"{self.name} at {self.department}"
+        return f"{self.name} at {self.department}, born {self.birthdate.isoformat()}, stamina: {self.stamina}"
 
 
-if __name__ == "__main__":
-    employee = Employee("Jens", "1981-06-07", 15, Department.IT)
+def employee_example():
+    employee = Employee("Jens",
+                        date.fromisoformat("1981-06-07"),
+                        15,
+                        Department.IT)
     print(employee)
 
     for i in range(5):
@@ -43,3 +46,55 @@ if __name__ == "__main__":
     [employee.rest(24) for _ in range(2)]
 
     print(f"stamina after 2 days rest: {employee.stamina}")
+
+
+class AccessibilityConventions:
+    def normal_accessible_method(self):
+        """Is visible like usual"""
+        print("Call me anytime ;)")
+
+    def _do_not_import(self):
+        """Internal use: does not import in statements like 'from AccessibilityConventions import *'"""
+        pass
+
+    def class_(self):
+        """Avoids clashing with Python keywords"""
+        pass
+
+    def let_me_do_it_for_you(self):
+        """Has full ability to call __very_private_method"""
+        print("Let me do it for you")
+        self.__very_private_method()
+
+    def __very_private_method(self):
+        """
+        Mangles the name to _AccessibilityConventions__very_private, 
+        mainly to avoid naming conflicts between the current class and its subclasses
+        """
+        print("Hey, stop it!")
+
+    def __str__(self):
+        """leading and trailing double underscores are reserved for magic names"""
+        for _ in range(10):
+            """Shows that I don't care about the range variable"""
+            pass
+
+
+def accessibility_example():
+    print(dir(AccessibilityConventions))
+
+    class_ = AccessibilityConventions()
+    class_.normal_accessible_method()
+    class_.let_me_do_it_for_you()
+
+    try:
+        class_.__very_private_method()
+    except AttributeError as e:
+        print(e)
+
+    class_._AccessibilityConventions__very_private_method()
+
+
+if __name__ == "__main__":
+    employee_example()
+    # accessibility_example()

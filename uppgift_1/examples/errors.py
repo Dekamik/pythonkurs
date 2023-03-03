@@ -14,7 +14,7 @@ def handle_raised_exception():
     try:
         raise MyError("Take that!")
     except MyError:
-        print("I don't think so!")
+        print("Denied!")
 
 
 def do_finally():
@@ -56,6 +56,14 @@ def multiple_error_types():
         print(e)
     except Exception as e:
         print(f"unhandled exception: {e}")
+
+
+def pass_exception():
+    try:
+        raise MyError()
+    except MyError as e:
+        print("This error was found, I'm gonna do something and then pass it on")
+        raise e
 
 
 if __name__ == "__main__":

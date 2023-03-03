@@ -18,13 +18,44 @@ def primitives():
 def non_primitives():
     l = [1, 2, 3, 4]
     d = {"one": 1, "two": 2, "three": 3, "four": 4}
-    t = (1, 2, 3, 4)
+    t = tuple(1, 2, 3, 4)
     s = set(["one", "two", "three", "four"])
 
     print(type(l))
     print(type(d))
     print(type(t))
     print(type(s))
+
+    print(l[0])
+    print(d["one"])
+    print(t[0])
+    print(s["one"])
+
+
+def list_as_stack():
+    stack = [1, 2, 3, 4]
+    print(stack)
+
+    stack.append(5)
+    print(f"Pushed 5 to the stack")
+    print(stack)
+
+    five = stack.pop()
+    print(f"Popped {five} from the stack")
+    print(stack)
+
+
+def list_as_queue():
+    queue = [1, 2, 3, 4]
+    print(queue)
+
+    queue.insert(0, 0)
+    print(f"Inserted 0 into the queue")
+    print(queue)
+
+    next = queue.pop()
+    print(f"Popped {next} from the queue")
+    print(queue)
 
 
 def implicit_conversion():
@@ -63,6 +94,8 @@ def casting():
 if __name__ == "__main__":
     primitives()
     # non_primitives()
+    # list_as_stack()
+    # list_as_queue()
     # implicit_conversion()
     # explicit_conversion()
     # casting()

@@ -21,7 +21,7 @@ def list_comprehension():
     [print(name) for name in list]
 
 
-def list_comprehension_2():
+def list_comprehension_with_conditional():
     list = ["Adam", "Bertil", "Caesar", "David", "Erik", "Filip"]
     new_list = [name for name in list if "a" in name]
     print(new_list)
@@ -49,5 +49,5 @@ if __name__ == "__main__":
     # for_in_range()
     # for_in_list()
     # list_comprehension()
-    # list_comprehension_2()
+    # list_comprehension_with_conditional()
     # no_albert()

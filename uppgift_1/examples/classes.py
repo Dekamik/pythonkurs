@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from datetime import date, datetime
+from datetime import date
 from enum import Enum
 
 
@@ -81,7 +81,7 @@ class AccessibilityConventions:
 
 
 def accessibility_example():
-    print(dir(AccessibilityConventions))
+    [print(member) for member in dir(AccessibilityConventions)]
 
     class_ = AccessibilityConventions()
     class_.normal_accessible_method()

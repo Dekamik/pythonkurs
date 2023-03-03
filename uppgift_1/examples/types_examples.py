@@ -15,21 +15,43 @@ def primitives():
     print(type(b))
 
 
+def int_literals():
+    decimal = 42
+    hexadecimal = 0x2A
+    octal = 0o52
+    binary = 0b0010_1010
+
+    print(f"{int(decimal)} = {decimal}")
+    print(f"{hex(hexadecimal)} = {hexadecimal}")
+    print(f"{oct(octal)} = {octal}")
+    print(f"{bin(binary)} = {binary}")
+
+
 def non_primitives():
-    l = [1, 2, 3, 4]
-    d = {"one": 1, "two": 2, "three": 3, "four": 4}
-    t = tuple(1, 2, 3, 4)
-    s = set(["one", "two", "three", "four"])
+    my_list = [1, 2, 3, 4, 5]
+    my_dict = {"one": 1, "two": 2, "three": 3, "four": 4}
+    my_tuple = (1, 2, 3, 4)
+    my_set = set(["one", "two", "three", "four"])
 
-    print(type(l))
-    print(type(d))
-    print(type(t))
-    print(type(s))
+    print(type(my_list))
+    print(type(my_dict))
+    print(type(my_tuple))
+    print(type(my_set))
 
-    print(l[0])
-    print(d["one"])
-    print(t[0])
-    print(s["one"])
+    print(my_list[0])  # get at index 0 (first one)
+
+    # Slicing = [start:end]
+    # get all from index 1, to index 3 (index 3 not included)
+    print(my_list[1:3])
+    print(my_list[:2])  # get the first two items
+    print(my_list[2:])  # index 2 to end
+    print(my_list[:-2])  # from beginning until index -2 (len(my_list) - 2 = 2)
+    print(my_list[-2:])  # index -2 to end
+    # Works with tuples and strings aswell
+
+    print(my_dict["one"])
+    print(my_tuple[0])
+    print("one" in my_set)
 
 
 def list_as_stack():
@@ -93,6 +115,7 @@ def casting():
 
 if __name__ == "__main__":
     primitives()
+    # int_literals()
     # non_primitives()
     # list_as_stack()
     # list_as_queue()

@@ -2,13 +2,11 @@ from datetime import date
 
 
 def primitives():
-    n = None
     i = 1
     f = 1.0
     s = "Hello"
     b = True
 
-    print(type(n))
     print(type(i))
     print(type(f))
     print(type(s))
@@ -29,31 +27,19 @@ def int_literals():
 
 def non_primitives():
     my_list = [1, 2, 3, 4, 5, 6]
-    my_dict = {"one": 1, "two": 2, "three": 3, "four": 4}
     my_tuple = (1, 2, 3, 4)
+    my_dict = {"one": 1, "two": 2, "three": 3, "four": 4}
     my_set = set(["one", "two", "three", "four"])
 
     print(type(my_list))
-    print(type(my_dict))
     print(type(my_tuple))
+    print(type(my_dict))
     print(type(my_set))
 
     print(my_list[0])  # get at index 0 (first one)
-
-    # Slicing = [start:end]
-    # get all from index 1, to index 3 (index 3 not included)
-    print(my_list[1:3])
-    print(my_list[:2])  # get the first two items
-    print(my_list[2:])  # index 2 to end
-    print(my_list[:-2])  # from beginning until index -2 (len(my_list) - 2 = 4)
-    print(my_list[-2:])  # index -2 to end
-    print(my_list[1:-2])  # from index 1 to index -2
-    print(my_list[-2:-1])  # from index -2 to index -1 (next to last)
-    # Works with tuples and strings aswell
-
-    print(my_dict["one"])
-    print(my_tuple[0])
-    print("one" in my_set)
+    print(my_tuple[0])  # get at index 0 (first one)
+    print(my_dict["one"])  # get value associated with the key "one"
+    print("one" in my_set)  # check if the value "one" exists in the set
 
 
 def list_as_stack():
@@ -83,9 +69,10 @@ def list_as_queue():
 
 
 def implicit_conversion():
-    i = 1
-    f = 1.0
-    print(i == f)
+    x = 1
+    y = 1.0
+    z = x + y
+    print(f"i = {x} ({type(x)})\nf = {y} ({type(y)})\nz = {z} ({type(z)})")
 
 
 def explicit_conversion():
@@ -116,9 +103,9 @@ def casting():
 
 
 if __name__ == "__main__":
-    # primitives()
+    primitives()
     # int_literals()
-    non_primitives()
+    # non_primitives()
     # list_as_stack()
     # list_as_queue()
     # implicit_conversion()

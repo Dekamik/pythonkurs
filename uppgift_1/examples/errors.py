@@ -12,21 +12,21 @@ def raise_exception():
 
 def handle_raised_exception():
     try:
-        raise MyError("Take that!")
+        raise MyError("Yes")
     except MyError:
-        print("Denied!")
+        print("No")
 
 
 def do_finally():
     try:
-        raise MyError("Take that!")
+        raise MyError("Oops")
     except MyError as e:
         print(f"Gotcha! This one said: {e}")
     finally:
         print("Good catch!")
 
     try:
-        raise MyError("Take that!")
+        raise MyError("I kill the program")
     finally:
         print("I am done for!")
 
@@ -35,16 +35,16 @@ def else_in_try_except():
     try:
         pass
     except MyError:
-        print("Catched!")
+        print("I run when MyError was raised")
     else:
-        print("No error was raised")
+        print("I run when no error was raised")
     finally:
-        print("We're done here")
+        print("I run all the time")
 
 
 def error_inheritance():
     try:
-        raise MyValueError("Wrong!")
+        raise MyValueError("Wrong value!")
     except ValueError as e:
         print(f"We capture value errors. This one said: {e}")
 

@@ -47,11 +47,17 @@ def str_methods():
     print(list_capitalized)
 
 
+def string_maths():
+    a = "A" * 30
+    print(a)
+
+
 if __name__ == "__main__":
-    hello_world()
+    # hello_world()
     # hello_world_single_quotes()
     # hello_input()
     # format_hello()
     # substring()
     # contains()
     # str_methods()
+    string_maths()

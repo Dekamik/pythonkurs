@@ -28,7 +28,7 @@ def int_literals():
 
 
 def non_primitives():
-    my_list = [1, 2, 3, 4, 5]
+    my_list = [1, 2, 3, 4, 5, 6]
     my_dict = {"one": 1, "two": 2, "three": 3, "four": 4}
     my_tuple = (1, 2, 3, 4)
     my_set = set(["one", "two", "three", "four"])
@@ -45,8 +45,10 @@ def non_primitives():
     print(my_list[1:3])
     print(my_list[:2])  # get the first two items
     print(my_list[2:])  # index 2 to end
-    print(my_list[:-2])  # from beginning until index -2 (len(my_list) - 2 = 2)
+    print(my_list[:-2])  # from beginning until index -2 (len(my_list) - 2 = 4)
     print(my_list[-2:])  # index -2 to end
+    print(my_list[1:-2])  # from index 1 to index -2
+    print(my_list[-2:-1])  # from index -2 to index -1 (next to last)
     # Works with tuples and strings aswell
 
     print(my_dict["one"])
@@ -114,9 +116,9 @@ def casting():
 
 
 if __name__ == "__main__":
-    primitives()
+    # primitives()
     # int_literals()
-    # non_primitives()
+    non_primitives()
     # list_as_stack()
     # list_as_queue()
     # implicit_conversion()

@@ -1,0 +1,7 @@
+db:
+  file: viati.db
+
+tagtider_api:
+  url: http://api.tagtider.net/v1/
+  user: tagtider
+  pass: codemocracy

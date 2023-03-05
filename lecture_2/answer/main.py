@@ -54,7 +54,7 @@ def main():
                 "url": channel["siteurl"]
             })
 
-    logger.info(f"processed {len(channels)} channels")
+    logger.info("processed %s channels", len(channels))
 
 
 if __name__ == "__main__":

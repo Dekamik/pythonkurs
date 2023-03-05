@@ -17,7 +17,7 @@ def handle_raised_exception():
         print("No")
 
 
-def do_finally():
+def finally_():
     try:
         raise MyError("Oops")
     except MyError as e:

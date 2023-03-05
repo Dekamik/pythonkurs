@@ -36,10 +36,10 @@ def non_primitives():
     print(type(my_dict))
     print(type(my_set))
 
-    print(my_list[0])  # get at index 0 (first one)
-    print(my_tuple[0])  # get at index 0 (first one)
-    print(my_dict["one"])  # get value associated with the key "one"
-    print("one" in my_set)  # check if the value "one" exists in the set
+    print(f"my_list[0] = {my_list[0]}")
+    print(f"my_tuple[0] = {my_tuple[0]}")
+    print(f"my_dict['one'] = {my_dict['one']}")
+    print(f"'one' in my_set = {'one' in my_set}")
 
 
 def list_as_stack():

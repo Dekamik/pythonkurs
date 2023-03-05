@@ -9,8 +9,36 @@ def list_comprehension():
 
 def list_comprehension_with_conditional():
     list = ["Adam", "Bertil", "Caesar", "David", "Erik", "Filip"]
-    new_list = [name for name in list if "a" in name]
-    print(new_list)
+
+    loop_list = []
+    for name in list:
+        if "a" in name:
+            loop_list.append(name)
+    print(loop_list)
+
+    comp_list = [name for name in list if "a" in name]
+    print(comp_list)
+
+
+def dict_comprehension():
+    län = ["Stockholms Län", "Västra Götalands Län", "Skåne Län"]
+    residensstäder = ["Stockholm", "Göteborg", "Malmö"]
+
+    loop_dict = {}
+    for (key, value) in zip(län, residensstäder):
+        loop_dict[key] = value
+    print(loop_dict)
+
+    comp_dict = {key: value for (key, value) in zip(län, residensstäder)}
+    print(comp_dict)
+
+
+def set_comprehension():
+    names = ["Adam", "Bertil", "Caesar", "David",
+             "David", "Erik", "Erik", "Erik"]
+
+    unique_names = {name for name in names}
+    print(unique_names)
 
 
 def generators():
@@ -29,8 +57,8 @@ def generators():
     print(next(gen))
     print(next(gen))
 
-    generator_expression = (i for i in range(10))
-    print(list(generator_expression))
+    generator_comprehension = (i for i in range(10))
+    print(list(generator_comprehension))
 
     even_gen = (i for i in range(10) if i % 2 == 0)
     print(list(even_gen))
@@ -95,17 +123,17 @@ def all_any():
         ]
     ]
 
-    for list in data:
-        if all([person["role"] == "teacher" for person in list]):
-            print("all: Contains only teachers")
+    for list_ in data:
+        if all([person["role"] == "teacher" for person in list_]):
+            print(f"Contains only teachers: {list_}")
         else:
-            print("all: Other than teachers found")
+            print(f"Other than teachers found: {list_}")
 
-    for list in data:
-        if any([person["role"] == "pupil" for person in list]):
-            print("all: Contains pupils")
+    for list_ in data:
+        if any([person["role"] == "pupil" for person in list_]):
+            print(f"Does contains pupils: {list_}")
         else:
-            print("all: Contains no pupils")
+            print(f"Does not contain pupils: {list_}")
 
 
 def min_max_sum():
@@ -120,6 +148,8 @@ def min_max_sum():
 if __name__ == "__main__":
     list_comprehension()
     # list_comprehension_with_conditional()
+    # dict_comprehension()
+    # set_comprehension()
     # generators()
     # generator_efficiency()
     # slicing()

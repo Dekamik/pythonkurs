@@ -26,18 +26,19 @@ sys.excepthook = exception_hook
 
 
 def main():
+    with open("lecture_2/answer/config.yaml") as f:
+        config = yaml.safe_load(f)
+
     logging.basicConfig(
         level=logging.DEBUG,
         format="%(asctime)s %(name)s - %(levelname)s - %(message)s",
         handlers=[
-            logging.StreamHandler()
+            logging.StreamHandler(),
+            logging.FileHandler(config["logging"]["file"])
         ]
     )
 
-    logger.debug("starting application")
-
-    with open("uppgift_2/example/config.yaml", "r") as f:
-        config = yaml.safe_load(f)
+    logger.debug("running application")
 
     api = SR(config)
     channels = list(api.get_channels())

@@ -1,0 +1,8 @@
+logging:
+  file: lecture_2/answer/sr.log
+
+storage:
+  file: lecture_2/answer/sveriges_radio.csv
+
+sr_api:
+  channels_url: http://api.sr.se/api/v2/channels

@@ -38,7 +38,7 @@ def print_b():
 
 
 if __name__ == "__main__":
-    # normal_function()
+    normal_function()
     # xhibit()
     # local_scope()
     # print_global_variable()

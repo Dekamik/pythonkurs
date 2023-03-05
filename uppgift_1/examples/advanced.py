@@ -2,7 +2,7 @@ import random
 import sys
 
 
-def list_comprehension():
+def comprehension():
     list = ["Adam", "Bertil", "Caesar", "David", "Erik", "Filip"]
     [print(name) for name in list]
 
@@ -145,8 +145,36 @@ def min_max_sum():
     print(f"Sum of all numbers is {sum(numbers)}")
 
 
+def unpacking_args(*args):
+    print(args)
+
+
+def unpacking_kvargs(**kvargs):
+    print(kvargs)
+
+
+def unpacking_both(*args, **kvargs):
+    print(args)
+    print(kvargs)
+
+
+def unpacking_into_collections(list_or_tuple: list | tuple, dict_: dict):
+    new_list = [
+        0,
+        *list_or_tuple
+    ]
+    new_dict = {
+        "c": 3,
+        **dict_
+    }
+    print(new_list)
+    print(new_dict)
+
+    unpacking_both(*list_or_tuple, **dict_)
+
+
 if __name__ == "__main__":
-    list_comprehension()
+    comprehension()
     # list_comprehension_with_conditional()
     # dict_comprehension()
     # set_comprehension()
@@ -155,3 +183,7 @@ if __name__ == "__main__":
     # slicing()
     # all_any()
     # min_max_sum()
+    # unpacking_args("a", "b", "c")
+    # unpacking_kvargs(one="a", two="b", three="c")
+    # unpacking_both("a", "b", three="c", four="d")
+    # unpacking_into_collections([1, 2, 3, 4], {"a": 1, "b": 2})

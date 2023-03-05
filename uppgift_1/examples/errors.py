@@ -61,9 +61,9 @@ def multiple_error_types():
 def pass_exception():
     try:
         raise MyError()
-    except MyError as e:
+    except MyError:
         print("This error was found, I'm gonna do something and then pass it on")
-        raise e
+        raise
 
 
 if __name__ == "__main__":

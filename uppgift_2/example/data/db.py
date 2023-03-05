@@ -10,19 +10,20 @@ import sqlite3
 logger = logging.getLogger(__name__)
 
 
-_create_data_table = """CREATE TABLE IF NOT EXISTS people (
+_create_channels_table = """CREATE TABLE IF NOT EXISTS channels (
 id integer PRIMARY KEY,
 name text NOT NULL,
-email text NOT NULL,
-phone text
+ext_id integer NOT NULL,
+type text NOT NULL,
+url text NOT NULL
 );"""
 
-_insert_into_people = """INSERT INTO people (name, email, phone) VALUES (?, ?, ?);"""
+_insert_into_channels = """INSERT INTO channels (name, ext_id, type, url) VALUES (?, ?, ?, ?);"""
 
-_select_all_from_people = """SELECT * FROM people;"""
+_select_all_from_channels = """SELECT * FROM channels;"""
 
 
-class ViatiDAO:
+class SverigesRadioDAO:
     def __init__(self, db_file: str):
         self.db_file = db_file
 
@@ -41,30 +42,30 @@ class ViatiDAO:
             logger.debug("connected")
 
             c = conn.cursor()
-            c.execute(_create_data_table)
+            c.execute(_create_channels_table)
 
             return conn
 
-        except sqlite3.Error as e:
+        except sqlite3.Error:
             logger.error("error when connecting to db at %s", db_file)
             if conn:
                 conn.close()
-            raise e
+            raise
 
-    def get_all_people(self) -> list:
+    def get_all_channels(self) -> list:
         try:
             c = self.conn.cursor()
-            c.execute(_select_all_from_people)
+            c.execute(_select_all_from_channels)
             return c.fetchall()
-        except sqlite3.Error as e:
+        except sqlite3.Error:
             logger.error("error selecting all people from db")
-            raise e
+            raise
 
-    def add_person(self, name, email, phone=None):
+    def add_channel(self, name: str, ext_id: int, type: str, url: str):
         try:
             c = self.conn.cursor()
-            c.execute(_insert_into_people, (name, email, phone))
+            c.execute(_insert_into_channels, (name, ext_id, type, url))
             self.conn.commit()
-        except sqlite3.Error as e:
-            logger.error("error inserting people to db")
-            raise e
+        except sqlite3.Error:
+            logger.error("error inserting channel into db")
+            raise

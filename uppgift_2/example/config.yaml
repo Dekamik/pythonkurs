@@ -1,7 +1,6 @@
-db:
-  file: viati.db
+storage:
+  db: uppgift_2/example/sveriges_radio.db
+  file: uppgift_2/example/sveriges_radio.csv
 
-tagtider_api:
-  url: http://api.tagtider.net/v1/
-  user: tagtider
-  pass: codemocracy
+sr_api:
+  channels_url: http://api.sr.se/api/v2/channels

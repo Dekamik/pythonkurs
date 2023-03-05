@@ -6,7 +6,6 @@
 import csv
 import logging
 
-import requests
 import yaml
 
 from data.db import SverigesRadioDAO
@@ -51,7 +50,7 @@ def main():
                             channel["channeltype"], channel["siteurl"])
     """
 
-    logger.info("finished")
+    logger.info(f"processed {len(channels)} channels")
 
 
 if __name__ == "__main__":

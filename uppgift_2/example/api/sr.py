@@ -18,18 +18,18 @@ class SR:
     def __init__(self, config):
         self.__channels_url = config["sr_api"]["channels_url"]
 
-    def get_channels(self):
-        def call_endpoint(url):
-            res = requests.get(url)
-            if not res.ok:
-                raise ApiError(res.status_code, res.text)
-            return res.json()
+    def __rest_get(self, url):
+        res = requests.get(url)
+        if not res.ok:
+            raise ApiError(res.status_code, res.text)
+        return res.json()
 
-        res_json = call_endpoint(f"{self.__channels_url}?format=json")
+    def get_channels(self):
+        res_json = self.__rest_get(f"{self.__channels_url}?format=json")
         for channel in res_json["channels"]:
             yield channel
 
         while "nextpage" in res_json["pagination"].keys():
-            res_json = call_endpoint(res_json["pagination"]["nextpage"])
+            res_json = self.__rest_get(res_json["pagination"]["nextpage"])
             for channel in res_json["channels"]:
                 yield channel

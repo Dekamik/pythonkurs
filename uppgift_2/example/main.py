@@ -9,7 +9,6 @@ import sys
 
 import yaml
 
-from data.db import SverigesRadioDAO
 from api.sr import SR
 
 
@@ -53,13 +52,6 @@ def main():
                 "type": channel["channeltype"],
                 "url": channel["siteurl"]
             })
-
-    """
-    with SverigesRadioDAO(config["db"]["file"]) as dao:
-        for channel in channels:
-            dao.add_channel(channel["name"], channel["id"],
-                            channel["channeltype"], channel["siteurl"])
-    """
 
     logger.info(f"processed {len(channels)} channels")
 

@@ -5,6 +5,7 @@
 
 import csv
 import logging
+import sys
 
 import yaml
 
@@ -13,6 +14,16 @@ from api.sr import SR
 
 
 logger = logging.getLogger(__name__)
+
+
+def exception_hook(exc_type, exc_value, exc_traceback):
+    logger.error(
+        "uncaught exception",
+        exc_info=(exc_type, exc_value, exc_traceback)
+    )
+
+
+sys.excepthook = exception_hook
 
 
 def main():
@@ -54,8 +65,4 @@ def main():
 
 
 if __name__ == "__main__":
-    try:
-        main()
-    except Exception as e:
-        logger.error(f"unhandled exception: {e}", exc_info=True)
-        raise
+    main()

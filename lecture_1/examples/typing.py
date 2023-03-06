@@ -4,12 +4,13 @@ from datetime import date
 def primitives():
     i = 1
     f = 1.0
-    s = "Hello"
+    s1 = "Hello"
+    s2 = 'Hello'
     b = True
 
     print(type(i))
     print(type(f))
-    print(type(s))
+    print(type(s1))
     print(type(b))
 
 
@@ -19,6 +20,13 @@ def int_literals():
     octal = 0o52
     binary = 0b0010_1010
 
+    # fdjsaphgeruiagh
+    """
+    fdasffdsjfods
+    """
+    s1 = "42 = " + str(decimal)
+    s2 = f"42 = {decimal}"
+
     print(f"{int(decimal)} = {decimal}")
     print(f"{hex(hexadecimal)} = {hexadecimal}")
     print(f"{oct(octal)} = {octal}")
@@ -26,10 +34,15 @@ def int_literals():
 
 
 def non_primitives():
-    my_list = [1, 2, 3, 4, 5, 6]
+    my_list = [1, 2, 3, 4]
     my_tuple = (1, 2, 3, 4)
-    my_dict = {"one": 1, "two": 2, "three": 3, "four": 4}
-    my_set = set(["one", "two", "three", "four"])
+    my_dict = {
+        "one": 1,
+        "two": 2, 
+        "three": 3, 
+        "four": 4
+    }
+    my_set = set(["one", "one", "two", "three", "three", "three", "four"])
 
     print(type(my_list))
     print(type(my_tuple))
@@ -70,8 +83,8 @@ def list_as_queue():
 
 def implicit_conversion():
     x = 1
-    y = 1.0
-    z = x + y
+    y = 0.555555555555555555555555555555555555555555555555555555555555555555
+    z = x + int(y)
     print(f"i = {x} ({type(x)})\nf = {y} ({type(y)})\nz = {z} ({type(z)})")
 
 
@@ -83,7 +96,7 @@ def explicit_conversion():
     print(type(i))
 
 
-def type_hint(path: int) -> str:
+def type_hint(path: int) -> list[dict] | dict | None:
     if path == 1:
         return "one"
     elif path == 2:
@@ -103,7 +116,7 @@ def casting():
 
 
 if __name__ == "__main__":
-    primitives()
+    # primitives()
     # int_literals()
     # non_primitives()
     # list_as_stack()
@@ -111,5 +124,5 @@ if __name__ == "__main__":
     # implicit_conversion()
     # explicit_conversion()
     # casting()
-    # ret = type_hint(3)
-    # print(type(ret))
+    ret = type_hint("grjaeoighier")
+    print(f"{ret} {type(ret)}")

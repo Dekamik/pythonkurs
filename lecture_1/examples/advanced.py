@@ -17,6 +17,7 @@ def list_comprehension_with_conditional():
     print(loop_list)
 
     comp_list = [name for name in list if "a" in name]
+    comp_list.sort(reverse=True)
     print(comp_list)
 
 
@@ -29,7 +30,7 @@ def dict_comprehension():
         loop_dict[key] = value
     print(loop_dict)
 
-    comp_dict = {key: value for (key, value) in zip(län, residensstäder)}
+    comp_dict = {key: value for (key, value) in zip(län, residensstäder) if "stockholm" not in key.lower()}
     print(comp_dict)
 
 
@@ -37,7 +38,7 @@ def set_comprehension():
     names = ["Adam", "Bertil", "Caesar", "David",
              "David", "Erik", "Erik", "Erik"]
 
-    unique_names = {name for name in names}
+    unique_names = {name.lower(): name.upper() for name in names}
     print(unique_names)
 
 
@@ -174,10 +175,10 @@ def unpacking_into_collections(list_or_tuple: list | tuple, dict_: dict):
 
 
 if __name__ == "__main__":
-    comprehension()
+    # comprehension()
     # list_comprehension_with_conditional()
     # dict_comprehension()
-    # set_comprehension()
+    set_comprehension()
     # generators()
     # generator_efficiency()
     # slicing()

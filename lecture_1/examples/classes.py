@@ -68,7 +68,7 @@ class AccessibilityConventions:
 
     def __very_private_method(self):
         """
-        Mangles the name to _AccessibilityConventions__very_private, 
+        Mangles the name to _AccessibilityConventions__very_private_method, 
         mainly to avoid naming conflicts between the current class and its subclasses
         """
         print("Hey, stop it!")

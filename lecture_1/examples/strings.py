@@ -13,12 +13,14 @@ def hello_input():
 
 def format_hello():
     name = input("Name: ")
-    print(f"Hello, {name}")
+    print(f"Hello, {int('3')}")
 
 
 def substring():
     text = "Hello, World!"
-    print(text[2:5])
+    print(text[0])
+    s = text[0:100]
+    print(s)
 
 
 def contains():
@@ -53,11 +55,11 @@ def string_maths():
 
 
 if __name__ == "__main__":
-    hello_world()
+    # hello_world()
     # hello_world_single_quotes()
     # hello_input()
     # format_hello()
-    # substring()
+    substring()
     # contains()
     # str_methods()
     # string_maths()

@@ -99,6 +99,14 @@ def slicing():
     print(my_list[-2:-1])  # from index -2 to index -1 (next to last)
     # Works with tuples and strings aswell
 
+    amount_1 = "49.99 kr"
+    amount_2 = "299.99 kr"
+
+    num_1 = float(amount_1[:-3])
+    num_2 = float(amount_2[:-3])
+
+    sum = num_1 + num_2
+
 
 def all_any():
     data = [
@@ -178,12 +186,12 @@ if __name__ == "__main__":
     # comprehension()
     # list_comprehension_with_conditional()
     # dict_comprehension()
-    set_comprehension()
+    # set_comprehension()
     # generators()
     # generator_efficiency()
     # slicing()
     # all_any()
-    # min_max_sum()
+    min_max_sum()
     # unpacking_args("a", "b", "c")
     # unpacking_kvargs(one="a", two="b", three="c")
     # unpacking_both("a", "b", three="c", four="d")

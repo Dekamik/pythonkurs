@@ -96,5 +96,5 @@ def accessibility_example():
 
 
 if __name__ == "__main__":
-    employee_example()
-    # accessibility_example()
+    # employee_example()
+    accessibility_example()
